@@ -13,24 +13,10 @@ import cv2 as cv
 import numpy as np
 from utility import util
 
-# Изменим стандартный размер графиков matplotlib
-plt.rcParams["figure.figsize"] = [6, 4]
-
 
 img_my = cv.imread('images/rtYCF3oqDcs.jpg')
 
 gray_image1 = cv.cvtColor(img_my, cv.COLOR_BGR2GRAY)
-
-gs = plt.GridSpec(2, 1)
-plt.figure(figsize=(10, 8))
-plt.subplot(gs[0])
-plt.imshow(gray_image1, cmap='gray')
-plt.xticks([]), plt.yticks([])
-
-plt.subplot(gs[1])
-plt.hist(gray_image1.reshape(-1), 256, range)
-
-plt.show()
 
 # 1 Бинаризация полутоновых изображений
 
